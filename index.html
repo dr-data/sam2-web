@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SAM2 Encoder-Decoder</title>
+    <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/ort.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="controls">
+        <button id="negativeBtn" disabled>Negative Points: OFF</button>
+        <button id="resetBtn" disabled>Reset Points</button>
+        <button id="testImage1">Test Image (plants)</button>
+        <button id="testImage2">Test Image (truck)</button>
+        <div class="file-input-container"></div>
+            <span class="note">(or select another image, height and width must be equal)</span>
+            <input type="file" id="imageInput" accept="image/*">
+        </div>
+    </div>
+    <div class="container">
+        <canvas id="sourceCanvas"></canvas>
+        <canvas id="maskCanvas"></canvas>
+    </div>
+    <div class="spinner-backdrop"></div>
+    <div class="spinner"></div>
+
+    <script type="module">
+        import { init } from './js/app.js';
+        init();
+    </script>
+</body>
+</html>
